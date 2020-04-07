@@ -26,6 +26,12 @@ def main_page():  # Just a normal function, I named it this way for cleaner code
     return render_template('index.html', average=average)
 
 
+# A welcome message to test our server
+@app.route('/welcome')
+def index():
+    return "<h1>Welcome to our server !!</h1>"
+
+
 if __name__ == "__main__":
     app.run(
         debug=True,  # Allow verbose error reports
