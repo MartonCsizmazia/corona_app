@@ -9,7 +9,7 @@
     position: absolute;
     font-family: myFirstFont, serif;
     display: block;
-    background: #1d1a4e;
+    background: #2d3e4e;
     top: 30%;
     left: 50%;
     width: 100%;
@@ -83,7 +83,7 @@ h1  {
     height: auto;
     opacity: 1;
     width: auto;
-
+    background: #2d3e4e;
 }
 
 a  {

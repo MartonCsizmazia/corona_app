@@ -1,0 +1,28 @@
+@font-face  {
+  font-family: myFirstFont;
+  src: url(font/Poppins-Light.woff2);
+}
+
+
+.footer-icons{
+    position: absolute;
+    top: 70%;
+    width:100%
+
+}
+
+td{
+    text-align: center;
+
+    font-family: myFirstFont, serif;
+
+}
+
+.gov, .world, .wiki, .hand
+{
+        transition: transform 0.5s;
+}
+
+.gov:hover , .world:hover , .wiki:hover , .hand:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

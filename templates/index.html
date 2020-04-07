@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>Elhunytak átlagéletkora</title>
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
-
+    <link rel="stylesheet" type="text/css" href="/static/css/icons.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="../static/js/script.js" defer></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
-<body style = "margin: 0px;background: #2d3e4e;">
+<body style = "margin: 0px;background: #1c2938;">
     <div class="card">
           <h1 class="title">
             <span class="old-text"  id="myButton">Az elhunytak átlagéletkora: {{ average }} év</span>
@@ -17,17 +20,63 @@
 
     </div>
 
+    <div class="footer-icons">
+    <table style="width:100%">
+        <tr>
+            <th>
+            <span class="gov" style="font-size: 5em; color: #5c5d5c;">
+                <i class="fas fa-landmark"></i>
+            </span>
+            </th>
+
+            <th>
+            <span class="wiki" style="font-size: 5em; color: #5c5d5c;">
+                <i class="fas fa-microscope"></i>
+            </span>
+            </th>
+
+            <th>
+            <span class="world" style="font-size: 5em; color: #5c5d5c;">
+                <i class="fas fa-globe-americas"></i>
+
+            </span>
+            </th>
+
+            <th>
+            <span class="hand" style="font-size: 5em; color: #5c5d5c;">
+                <i class="fas fa-hands-wash"></i>
+            </span>
+            </th>
+        </tr>
+            <td class="gov">
+                <a href="https://koronavirus.gov.hu" >Official goverment page</a>
+            </td>
+            <td class="wiki">
+                <a href="https://hu.wikipedia.org/wiki/COVID%E2%80%9319" >Information about disease</a>
+            </td>
+            <td class="world">
+                <a href="https://coronavirus.jhu.edu/map.html" >Worldwide information</a>
+            </td>
+            <td class="hand">
+                <a href="https://koronavirus.gov.hu/megelozes" >How to prevent infection</a>
+
+            </td>
+    </table>
+    </div>
+
+
+
     <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
         location.href = "https://koronavirus.gov.hu/elhunytak";
     };
     </script>
 
-    <div class="wrap">
-    <div class="new">website</div>
-    <div class="old">OLd</div>
-    </div>
 
+    <div class="wrap">
+    <div class="new"></div>
+    <div class="old"></div>
+    </div>
 
 
 </body>
