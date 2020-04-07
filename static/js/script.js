@@ -1,3 +1,5 @@
+
+//SECOND SCRIPT CREATED
 const actorRows = document.getElementsByClassName('doctor-row');
 
 for (let row of actorRows) {
@@ -16,6 +18,9 @@ for (let row of actorRows) {
     }
 
 }
+
+
+
 /*
     kűlső skope változóit minimalizálni
  */
@@ -28,17 +33,3 @@ for (let row of actorRows) {
  alert(elem2.outerHTML);
  }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
