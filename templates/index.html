@@ -10,7 +10,25 @@
 
 <body style = "margin: 0px;background: #2d3e4e;">
     <div class="card">
-        <h1>Az elhunytak átlagéletkora: {{ average }} év</h1>
+          <h1 class="title">
+            <span class="old-text"  id="myButton">Az elhunytak átlagéletkora: {{ average }} év</span>
+            <span class="new-text">Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért</span>
+         </h1>
+
     </div>
+
+    <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "https://koronavirus.gov.hu/elhunytak";
+    };
+    </script>
+
+    <div class="wrap">
+    <div class="new">website</div>
+    <div class="old">OLd</div>
+    </div>
+
+
+
 </body>
 </html>

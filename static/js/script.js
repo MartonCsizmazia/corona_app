@@ -1,4 +1,6 @@
 
+
+
 //SECOND SCRIPT CREATED
 const actorRows = document.getElementsByClassName('doctor-row');
 
