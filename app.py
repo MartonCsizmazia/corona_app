@@ -19,8 +19,20 @@ def main_page():  # Just a normal function, I named it this way for cleaner code
     # ageList = df.loc[:,'\n          Kor        '].tolist()
     ageList = df[df.columns[2]].tolist()
 
-    average = math.floor(sum(ageList) / len(ageList))
+    x = 0
+    urlBase = 'https://koronavirus.gov.hu/elhunytak?page='
+    while True:
+        try:
+            x += 1
+            url = urlBase + str(x)
+            d = pd.read_html(url)
+            df2 = d[0]
+            ageList2 = df2[df2.columns[2]].tolist()
+            ageList += ageList2
+        except ValueError:
+            break
 
+    average = math.floor(sum(ageList) / len(ageList))
     # return 'Az elhunytak atlageletkora:   %d' % average
 
     return render_template('index.html', average=average)
