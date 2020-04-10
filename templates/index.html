@@ -7,18 +7,56 @@
 
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/icons.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/card.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="../static/js/script.js" defer></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
-<body style = "margin: 0px;background: #1b2e42;">
-    <div class="card">
-          <h1 class="title">
-            <span class="old-text"  id="myButton">Az elhunytak átlagéletkora: {{ average }} év</span>
-            <span class="new-text">Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért</span>
-         </h1>
+
+
+<body style = "background: #1b2e42;">
+    <div class="info-zone">
+        <table style="width:100%">
+            <div class="old-text">
+                <th style="width: 33%">
+                    <div class="w3-container old-text" >
+                        <h3>
+                        Elhunyt {{number_of_deaths}} személy<br>
+                        </h3>
+                    </div>
+                </th>
+
+                <th style="width: 33%">
+                    <div class="w3-container old-text" >
+                        <h3>
+                        Az elhunytak átlagéletkora: {{ average }} év<br>
+                        </h3>
+                    </div>
+                </th>
+
+                <th style="width: 33%">
+                    <div class="w3-container old-text" >
+                        <h3>
+                        A leggyakoribb alapbeteségek:<br>
+                        {% for item in most_common %}
+                             {{item[0]}} <br>
+                         {% endfor %}
+                        </h3>
+                    </div>
+                </th>
+            </div>
+        </table>
+        <div class="new-text">
+            <h1 class="title">
+                Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
+            </h1>
+        </div>
     </div>
 
     <div class="footer-icons">
@@ -39,7 +77,6 @@
             <th>
             <span class="iccon" style="font-size: 5em; ">
                 <i class="fas fa-globe-americas"></i>
-
             </span>
             </th>
 
@@ -49,23 +86,20 @@
             </span>
             </th>
         </tr>
-            <td class="gov">
-                <a href="https://koronavirus.gov.hu" >Official goverment page</a>
+            <td class="gov" >
+                <a href="https://koronavirus.gov.hu" >Hivatalos magyarországi oldal</a>
             </td>
             <td class="wiki">
-                <a href="https://hu.wikipedia.org/wiki/COVID%E2%80%9319" >Information about disease</a>
+                <a href="https://hu.wikipedia.org/wiki/COVID%E2%80%9319" >Információ a betegségről</a>
             </td>
             <td class="world">
-                <a href="https://coronavirus.jhu.edu/map.html" >Worldwide information</a>
+                <a href="https://coronavirus.jhu.edu/map.html" >Világszintű információk</a>
             </td>
             <td class="hand">
-                <a href="https://koronavirus.gov.hu/megelozes" >How to prevent infection</a>
-
+                <a href="https://koronavirus.gov.hu/megelozes" >Hogy előzzük meg a fertőzést?</a>
             </td>
     </table>
     </div>
-
-
 
     <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
@@ -73,12 +107,9 @@
     };
     </script>
 
-
     <div class="wrap">
     <div class="new"></div>
     <div class="old"></div>
     </div>
-
-
 </body>
 </html>
