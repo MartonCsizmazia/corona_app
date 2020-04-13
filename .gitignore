@@ -110,7 +110,7 @@ bower_components
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 .idea/*
-/.idea
+idea/
 # CMake
 cmake-build-debug/
 
@@ -147,4 +147,5 @@ fabric.properties
 ### Environment variable script ###
 setenv.sh
 setenv.ps1
+/venv/
 /venv/

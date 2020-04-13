@@ -34,12 +34,36 @@ h1  {
   overflow: hidden;
 }
 .old-text,
-.new-text  {
-  display: block;
-
+.new-text {
+    display: block;
 }
-.old-text  {
 
+.bottombox1 {
+    bottom:40%;
+    right:33%;
+    width:100%;
+    text-align:center;
+    position: fixed;
+}
+
+.bottombox2 {
+    bottom:40%;
+    left:0;
+    width:100%;
+    text-align:center;
+    position: fixed;
+}
+
+.bottombox3 {
+    bottom:12%;
+    left:33%;
+    width:100%;
+    text-align:center;
+    position: fixed;
+}
+
+.old-text  {
+    text-align: center;
     height: auto;
     opacity: 1;
     width: auto;

@@ -22,36 +22,36 @@
 
 <body style = "background: #1b2e42;">
     <div class="info-zone">
-        <table style="width:100%">
-            <div class="old-text">
-                <th style="width: 33%">
-                    <div class="w3-container old-text" >
-                        <h3>
-                        Elhunyt {{number_of_deaths}} személy<br>
-                        </h3>
-                    </div>
-                </th>
+        <div class="old-text">
 
-                <th style="width: 33%">
-                    <div class="w3-container old-text" >
-                        <h3>
-                        Az elhunytak átlagéletkora: {{ average }} év<br>
-                        </h3>
-                    </div>
-                </th>
-
-                <th style="width: 33%">
-                    <div class="w3-container old-text" >
-                        <h3>
-                        A leggyakoribb alapbeteségek:<br>
-                        {% for item in most_common %}
-                             {{item[0]}} <br>
-                         {% endfor %}
-                        </h3>
-                    </div>
-                </th>
+            <div class="w3-container old-text " >
+                <div class ="bottombox1">
+                    <h3>
+                    Elhunyt {{number_of_deaths}} személy
+                    </h3>
+                </div>
             </div>
-        </table>
+
+            <div class="w3-container old-text" >
+                <div class ="bottombox2">
+                    <h3>
+                    Az elhunytak átlagéletkora: {{ average }} év
+                    </h3>
+                </div>
+            </div>
+
+            <div class="w3-container old-text" >
+                <div class ="bottombox3">
+                    <h3>
+                    A leggyakoribb alapbeteségek:<br>
+                    {% for item in most_common %}
+                         {{item[0]}} <br>
+                     {% endfor %}
+                    </h3>
+                 </div>
+            </div>
+
+        </div>
         <div class="new-text">
             <h1 class="title">
                 Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
