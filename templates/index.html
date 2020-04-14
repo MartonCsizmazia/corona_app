@@ -26,7 +26,7 @@
 
             <div class="w3-container old-text " >
                 <div class ="bottombox1">
-                    <h3>
+                    <h3 style="font-size:1.8vw;" >
                     Elhunyt {{number_of_deaths}} személy
                     </h3>
                 </div>
@@ -34,7 +34,7 @@
 
             <div class="w3-container old-text" >
                 <div class ="bottombox2">
-                    <h3>
+                    <h3 style="font-size:1.8vw;" >
                     Az elhunytak átlagéletkora: {{ average }} év
                     </h3>
                 </div>
@@ -42,7 +42,7 @@
 
             <div class="w3-container old-text" >
                 <div class ="bottombox3">
-                    <h3>
+                    <h3 style="font-size:1.8vw;" >
                     A leggyakoribb alapbeteségek:<br>
                     {% for item in most_common %}
                          {{item[0]}} <br>
@@ -53,8 +53,8 @@
 
         </div>
         <div class="new-text">
-            <h1 class="title">
-                Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
+            <h1 class="title"; style="font-size:2vw" >
+                Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" class = "myButton">koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
             </h1>
         </div>
     </div>
@@ -63,39 +63,39 @@
     <table style="width:100%">
         <tr>
             <th>
-            <span class="iccon" style="font-size: 5em; ">
+            <span class="iccon" style="font-size: 5vw; ">
                 <i class="fas fa-landmark"></i>
             </span>
             </th>
 
             <th>
-            <span class="iccon" style="font-size: 5em; ">
+            <span class="iccon" style="font-size: 5vw; ">
                 <i class="fas fa-microscope"></i>
             </span>
             </th>
 
             <th>
-            <span class="iccon" style="font-size: 5em; ">
+            <span class="iccon" style="font-size: 5vw; ">
                 <i class="fas fa-globe-americas"></i>
             </span>
             </th>
 
             <th>
-            <span class="iccon" style="font-size: 5em;">
+            <span class="iccon" style="font-size: 5vw;">
                 <i class="fas fa-hands-wash"></i>
             </span>
             </th>
         </tr>
-            <td class="gov" >
+            <td class="icon-text" >
                 <a href="https://koronavirus.gov.hu" >Hivatalos magyarországi oldal</a>
             </td>
-            <td class="wiki">
+            <td class="icon-text">
                 <a href="https://hu.wikipedia.org/wiki/COVID%E2%80%9319" >Információ a betegségről</a>
             </td>
-            <td class="world">
+            <td class="icon-text">
                 <a href="https://coronavirus.jhu.edu/map.html" >Világszintű információk</a>
             </td>
-            <td class="hand">
+            <td class="icon-text">
                 <a href="https://koronavirus.gov.hu/megelozes" >Hogy előzzük meg a fertőzést?</a>
             </td>
     </table>

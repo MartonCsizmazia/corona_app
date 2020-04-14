@@ -11,16 +11,16 @@
 
 }
 
-.gov, .world, .wiki, .hand
+.icon-text
 {
         transition: transform 0.5s;
         text-align: center;
-
+        font-size: 1.4vw;
         font-family: myFirstFont, serif;
         font-weight: bold;
 }
 
-.gov:hover , .world:hover , .wiki:hover , .hand:hover {
+.icon-text:hover {
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 

@@ -13,7 +13,8 @@
     top: 30%;
     left: 50%;
     width: 100%;
-    height: 200px;
+
+    height: 15vw;
     transform: translate(-50%, -50%);
 
     border-radius: 2px;
@@ -31,7 +32,8 @@
 
 
 h1  {
-  overflow: hidden;
+    overflow: hidden;
+    cursor: pointer
 }
 .old-text,
 .new-text {
@@ -39,7 +41,7 @@ h1  {
 }
 
 .bottombox1 {
-    bottom:40%;
+    bottom:36%;
     right:33%;
     width:100%;
     text-align:center;
@@ -47,7 +49,7 @@ h1  {
 }
 
 .bottombox2 {
-    bottom:40%;
+    bottom:36%;
     left:0;
     width:100%;
     text-align:center;
@@ -55,11 +57,15 @@ h1  {
 }
 
 .bottombox3 {
-    bottom:12%;
+    bottom:8%;
     left:33%;
     width:100%;
     text-align:center;
     position: fixed;
+}
+
+.myButton{
+    cursor: pointer;
 }
 
 .old-text  {
@@ -67,8 +73,6 @@ h1  {
     height: auto;
     opacity: 1;
     width: auto;
-    cursor: pointer;
-
     transition: opacity 0.6s linear;
 }
 .new-text  {
@@ -76,8 +80,9 @@ h1  {
     height: 0;
     opacity: 0;
     width: 0;
-    margin-top: 4%;
+    margin-top: 6%;
     transition: opacity 0.8s linear;
+
 }
 .info-zone:hover .old-text  {
     height: 0;
@@ -96,6 +101,7 @@ h1  {
 
 a  {
     color: black;
+
 }
 
 a:hover a  {
