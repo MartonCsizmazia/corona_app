@@ -18,13 +18,10 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
-
-
 <body style = "background: #1b2e42;">
-    <div class="info-zone">
+    <div class="info-zone" id="myButton">
         <div class="old-text">
-
-            <div class="w3-container old-text " >
+            <div class="w3-container " >
                 <div class ="bottombox1">
                     <h3 style="font-size:1.8vw;" >
                     Elhunyt {{number_of_deaths}} személy
@@ -32,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="w3-container old-text" >
+            <div class="w3-container " >
                 <div class ="bottombox2">
                     <h3 style="font-size:1.8vw;" >
                     Az elhunytak átlagéletkora: {{ average }} év
@@ -40,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="w3-container old-text" >
+            <div class="w3-container " >
                 <div class ="bottombox3">
                     <h3 style="font-size:1.8vw;" >
                     A leggyakoribb alapbeteségek:<br>
@@ -50,11 +47,10 @@
                     </h3>
                  </div>
             </div>
-
         </div>
         <div class="new-text">
-            <h1 class="title"; style="font-size:2vw" >
-                Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" class = "myButton">koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
+            <h1 style="font-size:2vw" id="title">
+                Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
             </h1>
         </div>
     </div>
@@ -107,9 +103,6 @@
     };
     </script>
 
-    <div class="wrap">
-    <div class="new"></div>
-    <div class="old"></div>
-    </div>
+    
 </body>
 </html>
