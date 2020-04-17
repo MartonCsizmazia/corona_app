@@ -8,21 +8,21 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
+GENDER = 1
+AGE = 2
+SICKNESS = 3
 
-# Register the '/' route to this function, this handles the main page: 'http://localhost:5000/'
-@app.route('/')
-def main_page():  # Just a normal function, I named it this way for cleaner code
-    # Okay, we render the index.html, then return the html string.
-
+def dataFrameMaker():
     d = pd.read_html('https://koronavirus.gov.hu/elhunytak')
     df = d[0]
+    return df
 
+def ageListMaker():
+    df = dataFrameMaker()
     # converting to list
     # in normal you have to give the coulms name, in this it accepted only this way
     # ageList = df.loc[:,'\n          Kor        '].tolist()
     ageList = df[df.columns[2]].tolist()
-    tempSicknessList = df[df.columns[3]].tolist()
-
     x = 0
     urlBase = 'https://koronavirus.gov.hu/elhunytak?page='
     while True:
@@ -32,29 +32,62 @@ def main_page():  # Just a normal function, I named it this way for cleaner code
             d = pd.read_html(url)
             df = d[0]
             ageList2 = df[df.columns[2]].tolist()
-            sicknessList2 = df[df.columns[3]].tolist()
             ageList += ageList2
-            tempSicknessList += sicknessList2
         except ValueError:
             break
+    return ageList
 
-    # print(df)
-    sicknessList = []
+def tempListMaker(column):
+    df = dataFrameMaker()
+    tempList = df[df.columns[column]].tolist()
+    x = 0
+    urlBase = 'https://koronavirus.gov.hu/elhunytak?page='
+    while True:
+        try:
+            x += 1
+            url = urlBase + str(x)
+            d = pd.read_html(url)
+            df = d[0]
+            sicknessList2 = df[df.columns[column]].tolist()
+            tempList += sicknessList2
+        except ValueError:
+            break
+    return tempList
 
-    for string in tempSicknessList:
+def ListMaker(column):
+    List = []
+    comaList = []
+    tempList = tempListMaker(column)
+    for string in tempList:
         if "," in string:
             sliced = string.split(", ")
             for word in sliced:
-                sicknessList.append(word)
+                comaList.append(word)
         else:
-            sicknessList.append(string)
-    print(sicknessList[0])
+            comaList.append(string)
 
-    how_many = dict(Counter(sicknessList))
+    for string in comaList:
+        if "," in string:
+            sliced = string.split(",")
+            for word in sliced:
+                List.append(word)
+        else:
+            List.append(string)
 
+    return List
+
+
+
+def DictionaryMaker(column):
+    List = ListMaker(column)
+    how_many = dict(Counter(List))
     how_many = sorted(how_many.items(), key=operator.itemgetter(1), reverse=True)
-    most_common = []
+    return how_many
 
+
+def mostCommonMaker():
+    how_many = DictionaryMaker(SICKNESS)
+    most_common = []
     HOW_MUCH_MOST_COMMON = 3
     for idx, sickness in enumerate(how_many):
         if idx < HOW_MUCH_MOST_COMMON:
@@ -62,8 +95,15 @@ def main_page():  # Just a normal function, I named it this way for cleaner code
             most_common.append(sickness)
         else:
             break
+    return most_common
 
-    print(most_common)
+@app.route('/')
+def main_page():
+    # Just a normal function, I named it this way for cleaner code
+    # Okay, we render the index.html, then return the html string.
+
+    ageList = ageListMaker()
+    most_common = mostCommonMaker()
     average = math.floor(sum(ageList) / len(ageList))
 
     return render_template('index.html', average=average, most_common=most_common, number_of_deaths=len(ageList))
@@ -74,6 +114,22 @@ def main_page():  # Just a normal function, I named it this way for cleaner code
 def index():
     return "<h1>Welcome to our server !!</h1>"
 
+@app.route('/main')
+def newindex():
+    ageList = ageListMaker()
+    most_common = mostCommonMaker()
+    average = math.floor(sum(ageList) / len(ageList))
+    minAge = min(ageList)
+    maxAge = max(ageList)
+
+    genderDictionary = DictionaryMaker(GENDER)
+    print (genderDictionary)
+    return render_template('newindex.html', average=average, most_common=most_common, number_of_deaths=len(ageList), minAge=minAge, maxAge=maxAge,genderDictionary=genderDictionary)
+
+@app.route('/diseases')
+def diseases():
+    sicknesses = DictionaryMaker(SICKNESS)
+    return render_template("disease.html", sicknesses=sicknesses)
 
 if __name__ == "__main__":
     app.run(

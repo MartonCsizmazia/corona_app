@@ -1,0 +1,99 @@
+.impressum{
+    position: absolute;
+    top: 5%;
+    text-align: center;
+    width: 100%;
+}
+
+body{
+    background-color: #1b2e42;
+}
+
+.info-zone  {
+    position: absolute;
+    font-family: myFirstFont, serif;
+    background: #455d75;
+    top: 30%;
+    left: 50%;
+    width: 102%;
+    height: 15vw;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+
+}
+
+
+.oldcard-text1, .oldcard-text2, .oldcard-text3  {
+    text-align: center;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.6s linear;
+
+}
+
+.oldcard-text1{
+    left: 20%;
+    bottom:36%;
+}
+
+.oldcard-text2{
+    left: 12%;
+    bottom:36%;
+}
+
+.oldcard-text3{
+    bottom:36%;
+}
+.newcard-text1, .newcard-text2, .newcard-text3  {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    opacity: 0;
+    transition: opacity 0.8s linear;
+}
+
+.newcard-text1{
+    left: 12%;
+    bottom:26%;
+}
+
+.newcard-text2{
+    left: 42%;
+    bottom:26%;
+}
+
+.newcard-text3{
+    left: 65%;
+    bottom:31%;
+}
+
+.wrap1:hover .oldcard-text1  {
+    opacity: 0;
+}
+.wrap1:hover .newcard-text1 {
+    opacity: 1;
+}
+
+
+.wrap2:hover .oldcard-text2  {
+    opacity: 0;
+}
+.wrap2:hover .newcard-text2 {
+    opacity: 1;
+}
+
+
+.wrap3:hover .oldcard-text3  {
+    opacity: 0;
+}
+.wrap3:hover .newcard-text3 {
+    opacity: 1;
+
+}
+
+

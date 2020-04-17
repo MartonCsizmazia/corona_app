@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Korona infó oldal</title>
+    <link rel='icon' href='../static/assets/favicon-96x96.png' type='image/x-icon'/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/icons.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/card.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/newcard.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="../static/js/script.js" defer></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body >
+    <table class="info-zone" >
+
+        <th class ="wrap1">
+            <div class="oldcard-text1">
+                <h3 style="font-size:1.8vw;" >
+                Elhunyt {{number_of_deaths}} személy
+                </h3>
+            </div>
+            <div class="newcard-text1">
+                <h3 style="font-size:1.8vw;" >
+                <table>
+                    <tr>
+                    <td>Nők: {{ genderDictionary[1][1] }}</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Férfiak: {{ genderDictionary[0][1] }}</td>
+                    <td></td>
+                    </tr>
+                </table>
+                </h3>
+            </div>
+        </th>
+
+        <th class ="wrap2">
+            <div class="oldcard-text2">
+                <h3 style="font-size:1.8vw;" >
+                Az elhunytak átlagéletkora: {{ average }} év
+                </h3>
+            </div>
+            <div class="newcard-text2">
+                <h3 style="font-size:1.8vw;" >
+                <table>
+                    <tr>
+                    <td>Legfiatalabb: {{ minAge }}</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Legidősebb: {{ maxAge }}</td>
+                    <td></td>
+                    </tr>
+                </table>
+                </h3>
+            </div>
+        </th>
+
+        <th class ="wrap3">
+            <div class="oldcard-text3">
+                <h3 style="font-size:1.8vw;" >
+                A leggyakoribb alapbeteségek:<br>
+                {% for item in most_common %}
+                     {{item[0]}}: {{item[1]}} <br>
+                 {% endfor %}
+                </h3>
+            </div>
+            <div class="newcard-text3">
+                <h3 style="font-size:1.8vw;" >
+                  <a href="/diseases" >Az összes betegség számainak megjelenítése</a>
+                </h3>
+            </div>
+         </th>
+
+
+    </table>
+    <div class="impressum">
+        <h1 style="font-size:1em; display: block" >
+            Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
+        </h1>
+    </div>
+
+
+
+
+
+    <div class="footer-icons">
+    <table style="width:100%">
+        <tr>
+            <th>
+            <span class="iccon" style="font-size: 5vw; ">
+                <i class="fas fa-landmark"></i>
+            </span>
+            </th>
+
+            <th>
+            <span class="iccon" style="font-size: 5vw; ">
+                <i class="fas fa-microscope"></i>
+            </span>
+            </th>
+
+            <th>
+            <span class="iccon" style="font-size: 5vw; ">
+                <i class="fas fa-globe-americas"></i>
+            </span>
+            </th>
+
+            <th>
+            <span class="iccon" style="font-size: 5vw;">
+                <i class="fas fa-hands-wash"></i>
+            </span>
+            </th>
+        </tr>
+            <td class="icon-text" >
+                <a href="https://koronavirus.gov.hu" >Hivatalos magyarországi oldal</a>
+            </td>
+            <td class="icon-text">
+                <a href="https://hu.wikipedia.org/wiki/COVID%E2%80%9319" >Információ a betegségről</a>
+            </td>
+            <td class="icon-text">
+                <a href="https://coronavirus.jhu.edu/map.html" >Világszintű információk</a>
+            </td>
+            <td class="icon-text">
+                <a href="https://koronavirus.gov.hu/megelozes" >Hogy előzzük meg a fertőzést?</a>
+            </td>
+    </table>
+    </div>
+
+
+    
+</body>
+</html>

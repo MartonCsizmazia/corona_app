@@ -3,6 +3,10 @@
   src: url(font/Poppins-Light.woff2);
 }
 
+body{
+    background-color: #1b2e42;
+}
+
 .info-zone  {
     position: absolute;
     font-family: myFirstFont, serif;

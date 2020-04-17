@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Korona infó oldal</title>
+    <link rel='icon' href='../static/assets/favicon-96x96.png' type='image/x-icon'/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/icons.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/card.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/newcard.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="../static/js/script.js" defer></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+<h3 style="font-size:1.8vw;" >
+    <a href="/main" >Főoldal</a>
+    <table>
+        <th>Alapbeteségek</th>
+        {% for item in sicknesses %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+        </tr>
+         {% endfor %}
+    </table>
+</h3>
+</body>
+</html>

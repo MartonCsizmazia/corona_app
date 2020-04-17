@@ -23,9 +23,11 @@
         <div class="old-text">
             <div class="w3-container " >
                 <div class ="bottombox1">
-                    <h3 style="font-size:1.8vw;" >
-                    Elhunyt {{number_of_deaths}} személy
-                    </h3>
+
+                        <h3 style="font-size:1.8vw;" >
+                        Elhunyt {{number_of_deaths}} személy
+                        </h3>
+
                 </div>
             </div>
 
@@ -42,14 +44,14 @@
                     <h3 style="font-size:1.8vw;" >
                     A leggyakoribb alapbeteségek:<br>
                     {% for item in most_common %}
-                         {{item[0]}} <br>
+                         {{item[0]}}: {{item[1]}} <br>
                      {% endfor %}
                     </h3>
                  </div>
             </div>
         </div>
         <div class="new-text">
-            <h1 style="font-size:2vw" id="title">
+            <h1 style="font-size:2vw" >
                 Az adatok a  <a href="https://koronavirus.gov.hu/elhunytak" >koronavirus.gov.hu/elhunytak</a> weblapról származnak, látogassa meg a további információkért
             </h1>
         </div>
